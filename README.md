@@ -132,5 +132,10 @@ class CustomDistilBERTModel(tf.keras.Model):
         return predictions
 ```
 
+## Results
 
+Results
+The custom model achieves a test accuracy of 94.38%, showcasing the effectiveness of fine-tuning DistilBERT for the specific text classification task.
+
+Feel free to adapt and modify the code based on your specific dataset and requirements.
 
