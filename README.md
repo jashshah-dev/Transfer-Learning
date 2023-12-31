@@ -109,5 +109,28 @@ The base DistilBERT model for sequence classification is loaded using TFDistilBe
 ## Custom Model Architecture
 To enhance the base DistilBERT model, a custom neural network architecture named CustomDistilBERTModel is implemented. This architecture extends the base model by incorporating an additional dense layer with ReLU activation and an output layer with softmax activation. The extension allows for more flexibility and adaptability to specific text classification tasks.
 
+## Extending the Model for Fine-Tuning
+
+To enhance the fine-tuning process, a custom model is designed by extending the base DistilBERT model. This custom model incorporates additional layers to provide more adaptability for specific classification tasks.
+
+### CustomDistilBERTModel Class
+
+The `CustomDistilBERTModel` class is defined as follows:
+
+```python
+class CustomDistilBERTModel(tf.keras.Model):
+    def __init__(self, base_model):
+        super(CustomDistilBERTModel, self).__init__()
+        self.base_model = base_model
+        self.dense_layer = tf.keras.layers.Dense(256, activation='relu')
+        self.output_layer = tf.keras.layers.Dense(5, activation='softmax')
+
+    def call(self, inputs, training=False):
+        logits = self.base_model(inputs, training=training).logits
+        dense_output = self.dense_layer(logits)
+        predictions = self.output_layer(dense_output)
+        return predictions
+```
+
 
 
