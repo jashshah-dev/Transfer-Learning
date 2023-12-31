@@ -70,3 +70,29 @@ MobileNet achieves better accuracy and metrics across multiple classes, indicati
 
 In summary, the higher accuracy, precision, recall, and F1-score of MobileNet compared to the CNN from scratch underscore the advantages of transfer learning in terms of leveraging pre-trained models and their ability to generalize to new tasks, especially when task-specific data is limited.
 
+# Fine-Tuning DistilBERT for Text Classification
+
+## Introduction
+
+This repository provides a comprehensive guide on fine-tuning the DistilBERT model for text classification using TensorFlow and the Hugging Face Transformers library. Text classification is a common natural language processing (NLP) task, and DistilBERT, a distilled version of BERT (Bidirectional Encoder Representations from Transformers), offers a lightweight yet powerful solution.
+
+## Getting Started
+
+### Prerequisites
+
+Ensure you have the following prerequisites installed:
+
+- Python 3.6 or later
+- TensorFlow
+- Transformers library from Hugging Face
+- Pandas
+- Seaborn
+- Matplotlib
+- Plotly
+- NLTK
+- tqdm
+
+You can install the required libraries using the following command:
+```bash
+pip install tensorflow transformers pandas seaborn matplotlib plotly nltk tqdm
+
