@@ -95,4 +95,19 @@ Ensure you have the following prerequisites installed:
 You can install the required libraries using the following command:
 ```bash
 pip install tensorflow transformers pandas seaborn matplotlib plotly nltk tqdm
+```
+
+## Dataset
+This project assumes that you have a prepared dataset stored in the train_texts and test_texts variables. It is essential to ensure that your dataset is appropriately preprocessed and split into training and testing sets before proceeding with the model training.
+
+## Tokenization
+DistilBERT tokenization is a crucial step in preparing the data for training. The process is performed using the DistilBertTokenizer from the Hugging Face Transformers library. The tokenizer is initialized with a pre-trained DistilBERT model, specifically 'distilbert-base-uncased'. During tokenization, the training and testing texts are transformed into sequences of tokens, and the sequences are encoded with padding and truncation to align with the model's input requirements.
+
+## Model Initialization
+The base DistilBERT model for sequence classification is loaded using TFDistilBertForSequenceClassification from the Hugging Face Transformers library. Following the model initialization, it is compiled with an Adam optimizer and categorical cross-entropy loss, setting the stage for training.
+
+## Custom Model Architecture
+To enhance the base DistilBERT model, a custom neural network architecture named CustomDistilBERTModel is implemented. This architecture extends the base model by incorporating an additional dense layer with ReLU activation and an output layer with softmax activation. The extension allows for more flexibility and adaptability to specific text classification tasks.
+
+
 
